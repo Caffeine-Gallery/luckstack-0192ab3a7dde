@@ -1,0 +1,5 @@
+service : {
+  addFunds: (float64) -> ();
+  getBalance: (principal) -> (float64) query;
+  placeBet: (float64) -> (text);
+}
