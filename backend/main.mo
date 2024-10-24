@@ -47,8 +47,8 @@ actor Casino {
     };
 
     // Function to add funds to user balance
-    public func addFunds(amount: Float) : async () {
-        let user = Principal.fromActor(Casino);
+    public shared(msg) func addFunds(amount: Float) : async () {
+        let user = msg.caller;
         let currentBalance = await getBalance(user);
         balancesMap.put(user, currentBalance + amount);
     };
@@ -56,6 +56,12 @@ actor Casino {
     // Function to place a bet
     public shared(msg) func placeBet(amount: Float) : async Text {
         let user = msg.caller;
+        
+        // Verify user is not anonymous
+        if (Principal.isAnonymous(user)) {
+            return "Please login first";
+        };
+
         let currentBalance = await getBalance(user);
 
         if (currentBalance < amount) {

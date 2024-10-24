@@ -9,11 +9,17 @@
 <body>
     <div class="container">
         <h1>Simple Casino</h1>
-        <div id="balance">Balance: $0.00</div>
-        <input type="number" id="betAmount" placeholder="Enter bet amount">
-        <button id="placeBet">Place Bet</button>
-        <button id="addFunds">Add $100</button>
-        <div id="result"></div>
+        <div id="authSection">
+            <button id="loginButton">Login with Internet Identity</button>
+            <button id="logoutButton" style="display: none;">Logout</button>
+        </div>
+        <div id="gameSection" style="display: none;">
+            <div id="balance">Balance: $0.00</div>
+            <input type="number" id="betAmount" placeholder="Enter bet amount">
+            <button id="placeBet">Place Bet</button>
+            <button id="addFunds">Add $100</button>
+            <div id="result"></div>
+        </div>
     </div>
     <script type="module" src="index.js"></script>
 </body>

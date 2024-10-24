@@ -14,6 +14,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    min-width: 300px;
 }
 
 h1 {
@@ -45,7 +46,27 @@ button:hover {
     background-color: #45a049;
 }
 
+#loginButton {
+    background-color: #2196F3;
+}
+
+#loginButton:hover {
+    background-color: #1976D2;
+}
+
+#logoutButton {
+    background-color: #f44336;
+}
+
+#logoutButton:hover {
+    background-color: #d32f2f;
+}
+
 #result {
     margin-top: 1rem;
     font-weight: bold;
+}
+
+#authSection {
+    margin-bottom: 2rem;
 }
